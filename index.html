@@ -1,0 +1,1232 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AAD Heating & Air Conditioning | Reliable HVAC Services</title>
+    <meta name="description" content="Professional heating and cooling services for your home and business. Reliable AC repair, furnace maintenance, and installations by AAD Heating & Air Conditioning. Est. 1998.">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            900: '#0B192C',
+                            800: '#1E3E62',
+                            700: '#002B5B',
+                            600: '#144272'
+                        },
+                        cool: {
+                            500: '#00B4D8',
+                            600: '#0096C7',
+                            700: '#0077B6'
+                        },
+                        warm: {
+                            500: '#FF7F00',
+                            600: '#E67300'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome for professional icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #334155;
+            background-color: #F8FAFC;
+        }
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .hero-pattern {
+            background-image: linear-gradient(135deg, rgba(11, 25, 44, 0.94) 0%, rgba(30, 62, 98, 0.90) 100%), url('https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        .cta-pattern {
+            background-image: linear-gradient(135deg, rgba(11, 25, 44, 0.95) 0%, rgba(0, 119, 182, 0.90) 100%), url('https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 antialiased selection:bg-cool-500 selection:text-white">
+
+    <!-- Sticky Header -->
+    <header id="header" class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md shadow-sm transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Brand Logo from user provided image -->
+                <a href="#home" class="flex items-center space-x-3 group">
+                    <img src="https://images.unsplash.com/photo-1541888946425-d0fbb18f86f6?auto=format&fit=crop&w=150&q=80" alt="AAD Logo" class="w-12 h-12 rounded-xl object-cover shadow-md group-hover:scale-105 transition-transform" onerror="this.src='https://placehold.co/100x100/0B192C/FFF?text=AAD';">
+                    <div>
+                        <span class="text-xl sm:text-2xl font-800 tracking-tight text-navy-900 block leading-tight">AAD</span>
+                        <span class="text-xs font-semibold tracking-wider text-cool-600 uppercase">Heating & AC &bull; Est. 1998</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden lg:flex items-center space-x-8">
+                    <a href="#home" class="text-slate-700 hover:text-cool-600 font-medium transition-colors">Home</a>
+                    <a href="#about" class="text-slate-700 hover:text-cool-600 font-medium transition-colors">About</a>
+                    <a href="#services" class="text-slate-700 hover:text-cool-600 font-medium transition-colors">Services</a>
+                    <a href="#why-us" class="text-slate-700 hover:text-cool-600 font-medium transition-colors">Why Choose Us</a>
+                    <a href="#reviews" class="text-slate-700 hover:text-cool-600 font-medium transition-colors">Reviews</a>
+                    <a href="#contact" class="text-slate-700 hover:text-cool-600 font-medium transition-colors">Contact</a>
+                </nav>
+
+                <!-- Header Actions -->
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="tel:5551234567" class="flex items-center space-x-2 text-navy-900 font-bold hover:text-cool-600 transition-colors bg-slate-100 hover:bg-slate-200 px-4 py-2.5 rounded-xl">
+                        <div class="w-8 h-8 rounded-full bg-warm-500 text-white flex items-center justify-center text-xs shadow-sm">
+                            <i class="fa-solid fa-phone"></i>
+                        </div>
+                        <span class="text-sm">(555) 123-4567</span>
+                    </a>
+                    <button onclick="openBookingModal()" class="bg-warm-500 hover:bg-warm-600 text-white font-semibold px-5 py-2.5 rounded-xl shadow-lg shadow-warm-500/20 hover:shadow-warm-500/40 transition-all transform hover:-translate-y-0.5">
+                        Request Service
+                    </button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="lg:hidden flex items-center space-x-3">
+                    <a href="tel:5551234567" class="md:hidden text-warm-500 bg-slate-100 p-2.5 rounded-xl text-sm">
+                        <i class="fa-solid fa-phone"></i>
+                    </a>
+                    <button id="mobile-menu-button" onclick="toggleMobileMenu()" class="text-slate-700 hover:text-navy-900 p-2 rounded-xl focus:outline-none">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Drawer Menu -->
+        <div id="mobile-menu" class="lg:hidden hidden bg-white border-t border-slate-100 px-6 pt-4 pb-6 space-y-4 shadow-xl">
+            <a href="#home" onclick="toggleMobileMenu()" class="block text-slate-700 hover:text-cool-600 font-medium py-2">Home</a>
+            <a href="#about" onclick="toggleMobileMenu()" class="block text-slate-700 hover:text-cool-600 font-medium py-2">About</a>
+            <a href="#services" onclick="toggleMobileMenu()" class="block text-slate-700 hover:text-cool-600 font-medium py-2">Services</a>
+            <a href="#why-us" onclick="toggleMobileMenu()" class="block text-slate-700 hover:text-cool-600 font-medium py-2">Why Choose Us</a>
+            <a href="#reviews" onclick="toggleMobileMenu()" class="block text-slate-700 hover:text-cool-600 font-medium py-2">Reviews</a>
+            <a href="#contact" onclick="toggleMobileMenu()" class="block text-slate-700 hover:text-cool-600 font-medium py-2">Contact</a>
+            <div class="pt-2 flex flex-col space-y-3">
+                <a href="tel:5551234567" class="flex items-center justify-center space-x-2 text-navy-900 font-bold bg-slate-100 py-3 rounded-xl">
+                    <i class="fa-solid fa-phone text-warm-500"></i>
+                    <span>(555) 123-4567</span>
+                </a>
+                <button onclick="toggleMobileMenu(); openBookingModal();" class="w-full bg-warm-500 hover:bg-warm-600 text-white font-semibold py-3 rounded-xl shadow-md text-center">
+                    Request Service
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative pt-32 pb-20 md:pt-40 md:pb-28 hero-pattern text-white overflow-hidden">
+        <div class="absolute inset-0 bg-black/40"></div>
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <!-- Left Column: Copy & CTAs -->
+                <div class="lg:col-span-7 space-y-6 fade-in-up">
+                    <div class="inline-flex items-center space-x-2 bg-cool-500/20 border border-cool-400/30 px-3.5 py-1.5 rounded-full text-cool-300 text-xs sm:text-sm font-semibold tracking-wide">
+                        <i class="fa-solid fa-shield-halved text-cool-400"></i>
+                        <span>Serving Since 1998 &bull; Licensed & Insured Professionals</span>
+                    </div>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
+                        Reliable Heating & Cooling. <span class="text-cool-400 block mt-1">Comfort You Can Count On.</span>
+                    </h1>
+                    <p class="text-lg sm:text-xl text-slate-200 font-light leading-relaxed max-w-2xl">
+                        Professional Heating & Air Conditioning Services for Your Home and Business. Stay comfortable through every season with dependable solutions, from repairs to new installations.
+                    </p>
+                    <div class="flex flex-col sm:flex-row items-stretch sm:items-center space-y-4 sm:space-y-0 sm:space-x-4 pt-2">
+                        <button onclick="openBookingModal()" class="bg-warm-500 hover:bg-warm-600 text-white text-center font-bold px-8 py-4 rounded-xl shadow-xl shadow-warm-500/30 transition-all transform hover:-translate-y-0.5 text-base flex items-center justify-center space-x-3">
+                            <span>Request Service</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                        <a href="tel:5551234567" class="bg-white/10 hover:bg-white/20 border border-white/20 text-white text-center font-bold px-8 py-4 rounded-xl transition-all backdrop-blur-sm text-base flex items-center justify-center space-x-3">
+                            <i class="fa-solid fa-phone text-warm-500"></i>
+                            <span>Call Now: (555) 123-4567</span>
+                        </a>
+                    </div>
+
+                    <!-- Compact Trust Highlights -->
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-8 border-t border-white/10">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-10 h-10 rounded-lg bg-cool-500/20 flex items-center justify-center text-cool-400">
+                                <i class="fa-solid fa-temperature-arrow-up"></i>
+                            </div>
+                            <span class="text-sm font-medium text-slate-200">Reliable HVAC Solutions</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-10 h-10 rounded-lg bg-cool-500/20 flex items-center justify-center text-cool-400">
+                                <i class="fa-solid fa-user-gear"></i>
+                            </div>
+                            <span class="text-sm font-medium text-slate-200">Professional Service</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-10 h-10 rounded-lg bg-cool-500/20 flex items-center justify-center text-cool-400">
+                                <i class="fa-solid fa-house-chimney"></i>
+                            </div>
+                            <span class="text-sm font-medium text-slate-200">Residential & Commercial</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Quick Estimate Widget -->
+                <div class="lg:col-span-5">
+                    <div class="bg-white/15 backdrop-blur-md p-6 rounded-3xl border border-white/20 shadow-2xl relative">
+                        <div class="absolute -top-4 -right-4 bg-warm-500 text-white text-xs font-bold px-4 py-2 rounded-xl shadow-lg flex items-center space-x-1.5">
+                            <i class="fa-solid fa-bolt"></i>
+                            <span>Fast Scheduling</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Need Quick Assistance?</h3>
+                        <p class="text-slate-200 text-sm mb-6">Select your service type below to book an appointment with our expert technicians.</p>
+                        
+                        <form onsubmit="handleQuickBook(event)" class="space-y-4">
+                            <div>
+                                <label class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-1">Your Full Name</label>
+                                <input type="text" id="quickName" required class="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white placeholder-slate-300 focus:outline-none focus:border-cool-400 text-sm" placeholder="John Doe">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-1">Phone Number</label>
+                                <input type="tel" id="quickPhone" required class="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white placeholder-slate-300 focus:outline-none focus:border-cool-400 text-sm" placeholder="(555) 000-0000">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-1">Service Needed</label>
+                                <select id="quickService" class="w-full bg-slate-900/90 border border-white/20 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-cool-400 text-sm">
+                                    <option value="AC Repair">Air Conditioning Repair</option>
+                                    <option value="AC Installation">Air Conditioning Installation</option>
+                                    <option value="Heating Repair">Heating & Furnace Repair</option>
+                                    <option value="Heating Installation">Heating System Installation</option>
+                                    <option value="Maintenance">Preventive HVAC Maintenance</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="w-full bg-cool-500 hover:bg-cool-600 text-white font-bold py-3.5 rounded-xl shadow-lg transition-all text-sm">
+                                Book Service Now
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust & Benefits Bar -->
+    <section class="bg-white border-b border-slate-200 py-8 shadow-sm relative z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Benefit 1 -->
+                <div class="flex items-center space-x-4 p-4 rounded-2xl hover:bg-slate-50 transition-all border border-transparent hover:border-slate-200">
+                    <div class="w-12 h-12 rounded-xl bg-cool-50 text-cool-600 flex items-center justify-center text-xl flex-shrink-0">
+                        <i class="fa-solid fa-award"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-navy-900 text-sm">Heating & Cooling Expertise</h4>
+                        <p class="text-xs text-slate-500">Certified technicians</p>
+                    </div>
+                </div>
+                <!-- Benefit 2 -->
+                <div class="flex items-center space-x-4 p-4 rounded-2xl hover:bg-slate-50 transition-all border border-transparent hover:border-slate-200">
+                    <div class="w-12 h-12 rounded-xl bg-warm-50 text-warm-500 flex items-center justify-center text-xl flex-shrink-0">
+                        <i class="fa-solid fa-screwdriver-wrench"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-navy-900 text-sm">Repair & Maintenance</h4>
+                        <p class="text-xs text-slate-500">Prolong system life</p>
+                    </div>
+                </div>
+                <!-- Benefit 3 -->
+                <div class="flex items-center space-x-4 p-4 rounded-2xl hover:bg-slate-50 transition-all border border-transparent hover:border-slate-200">
+                    <div class="w-12 h-12 rounded-xl bg-cool-50 text-cool-600 flex items-center justify-center text-xl flex-shrink-0">
+                        <i class="fa-solid fa-sliders"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-navy-900 text-sm">Installation Solutions</h4>
+                        <p class="text-xs text-slate-500">High-efficiency units</p>
+                    </div>
+                </div>
+                <!-- Benefit 4 -->
+                <div class="flex items-center space-x-4 p-4 rounded-2xl hover:bg-slate-50 transition-all border border-transparent hover:border-slate-200">
+                    <div class="w-12 h-12 rounded-xl bg-warm-50 text-warm-500 flex items-center justify-center text-xl flex-shrink-0">
+                        <i class="fa-solid fa-face-smile"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-navy-900 text-sm">Customer-Focused Service</h4>
+                        <p class="text-xs text-slate-500">Satisfaction guaranteed</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 lg:py-28 bg-slate-50 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+                <!-- Left: Fresh Image -->
+                <div class="lg:col-span-6 relative">
+                    <div class="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
+                        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1000&q=80" alt="Professional HVAC technician inspecting cooling equipment" class="w-full h-auto object-cover transform hover:scale-105 transition-transform duration-700">
+                    </div>
+                    <div class="absolute -bottom-8 -right-8 bg-navy-900 text-white p-6 rounded-2xl shadow-xl max-w-xs hidden sm:block border border-white/10">
+                        <div class="flex items-center space-x-3 mb-2">
+                            <div class="w-10 h-10 rounded-xl bg-cool-500 text-white flex items-center justify-center font-bold text-lg">
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+                            <span class="font-bold text-base">Dedicated Professionals</span>
+                        </div>
+                        <p class="text-xs text-slate-300">Delivering a professional service experience from the first conversation to the completed job.</p>
+                    </div>
+                </div>
+
+                <!-- Right: Content -->
+                <div class="lg:col-span-6 space-y-6">
+                    <div class="inline-flex items-center space-x-2 bg-cool-500/10 text-cool-600 px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">
+                        <i class="fa-solid fa-circle-info"></i>
+                        <span>About AAD Heating & Air Conditioning</span>
+                    </div>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-navy-900 tracking-tight leading-tight">
+                        Your Comfort Is Our Priority
+                    </h2>
+                    <p class="text-slate-600 text-base sm:text-lg leading-relaxed">
+                        At AAD Heating & Air Conditioning, we understand how important a comfortable indoor environment is for your family, employees, and customers. Our goal is to provide dependable heating and cooling solutions tailored to your property's needs.
+                    </p>
+                    <p class="text-slate-600 text-base leading-relaxed">
+                        Whether you need help diagnosing an HVAC problem, maintaining your existing equipment, or exploring a new system, our team is focused on delivering a professional service experience from the first conversation to the completed job.
+                    </p>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
+                        <div class="flex items-start space-x-3 bg-white p-4 rounded-2xl shadow-sm border border-slate-100">
+                            <div class="text-cool-600 text-lg mt-0.5"><i class="fa-solid fa-bullseye"></i></div>
+                            <div>
+                                <h4 class="font-bold text-navy-900 text-sm">Precise Diagnosis</h4>
+                                <p class="text-xs text-slate-500 mt-0.5">Accurate troubleshooting for lasting fixes.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3 bg-white p-4 rounded-2xl shadow-sm border border-slate-100">
+                            <div class="text-warm-500 text-lg mt-0.5"><i class="fa-solid fa-shield-heart"></i></div>
+                            <div>
+                                <h4 class="font-bold text-navy-900 text-sm">Trusted Care</h4>
+                                <p class="text-xs text-slate-500 mt-0.5">Respectful treatment of your home.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-4">
+                        <button onclick="openBookingModal()" class="bg-navy-900 hover:bg-navy-800 text-white font-bold px-8 py-3.5 rounded-xl shadow-lg transition-all text-sm flex items-center space-x-3">
+                            <span>Get to Know Us</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HVAC Services Section -->
+    <section id="services" class="py-20 lg:py-28 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <div class="inline-flex items-center space-x-2 bg-cool-500/10 text-cool-600 px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">
+                    <i class="fa-solid fa-gear"></i>
+                    <span>Our Professional Offerings</span>
+                </div>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-navy-900 tracking-tight">
+                    Complete Heating & Cooling Solutions
+                </h2>
+                <p class="text-slate-600 text-base sm:text-lg">
+                    From everyday maintenance to major system upgrades, explore HVAC services designed to help keep your property comfortable throughout the year.
+                </p>
+            </div>
+
+            <!-- 6 Service Cards Grid with Fresh Unsplash Images -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1: AC Repair -->
+                <div class="bg-slate-50 rounded-3xl overflow-hidden border border-slate-200 hover:border-cool-500/50 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="h-48 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80" alt="Air Conditioning Repair" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                            <span class="absolute bottom-3 left-4 text-white text-xs font-bold bg-cool-600/90 px-3 py-1 rounded-full"><i class="fa-solid fa-snowflake mr-1"></i> Cooling</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-navy-900 mb-3">Air Conditioning Repair</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                                Troubleshooting and repair solutions to address cooling problems and restore indoor comfort quickly.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="px-6 pb-6">
+                        <button onclick="openServiceRequest('Air Conditioning Repair')" class="inline-flex items-center justify-between w-full text-sm font-bold text-navy-900 group-hover:text-cool-600 pt-4 border-t border-slate-200 transition-colors">
+                            <span>Request This Service</span>
+                            <i class="fa-solid fa-arrow-right transform group-hover:translate-x-1 transition-transform"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Service 2: AC Installation -->
+                <div class="bg-slate-50 rounded-3xl overflow-hidden border border-slate-200 hover:border-cool-500/50 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="h-48 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1542013936-69f0eed2b716?auto=format&fit=crop&w=800&q=80" alt="Air Conditioning Installation" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/800x600/0B192C/FFF?text=AC+Installation';">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                            <span class="absolute bottom-3 left-4 text-white text-xs font-bold bg-cool-600/90 px-3 py-1 rounded-full"><i class="fa-solid fa-wind mr-1"></i> Installation</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-navy-900 mb-3">Air Conditioning Installation</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                                Professional installation options for residential or commercial cooling needs, ensuring optimal airflow and efficiency.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="px-6 pb-6">
+                        <button onclick="openServiceRequest('Air Conditioning Installation')" class="inline-flex items-center justify-between w-full text-sm font-bold text-navy-900 group-hover:text-cool-600 pt-4 border-t border-slate-200 transition-colors">
+                            <span>Request This Service</span>
+                            <i class="fa-solid fa-arrow-right transform group-hover:translate-x-1 transition-transform"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Service 3: Heating & Furnace Repair -->
+                <div class="bg-slate-50 rounded-3xl overflow-hidden border border-slate-200 hover:border-warm-500/50 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="h-48 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=800&q=80" alt="Heating & Furnace Repair" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                            <span class="absolute bottom-3 left-4 text-white text-xs font-bold bg-warm-500/90 px-3 py-1 rounded-full"><i class="fa-solid fa-fire mr-1"></i> Heating</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-navy-900 mb-3">Heating & Furnace Repair</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                                Help diagnosing heating issues and getting your heating system working properly when winter cold arrives.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="px-6 pb-6">
+                        <button onclick="openServiceRequest('Heating & Furnace Repair')" class="inline-flex items-center justify-between w-full text-sm font-bold text-navy-900 group-hover:text-warm-500 pt-4 border-t border-slate-200 transition-colors">
+                            <span>Request This Service</span>
+                            <i class="fa-solid fa-arrow-right transform group-hover:translate-x-1 transition-transform"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Service 4: Heating System Installation -->
+                <div class="bg-slate-50 rounded-3xl overflow-hidden border border-slate-200 hover:border-warm-500/50 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="h-48 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80" alt="Heating System Installation" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/800x600/0B192C/FFF?text=Heating+System';">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                            <span class="absolute bottom-3 left-4 text-white text-xs font-bold bg-warm-500/90 px-3 py-1 rounded-full"><i class="fa-solid fa-house-chimney-crack mr-1"></i> Upgrade</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-navy-900 mb-3">Heating System Installation</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                                Explore heating system replacement and installation options suited to your property's specific size and layout.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="px-6 pb-6">
+                        <button onclick="openServiceRequest('Heating System Installation')" class="inline-flex items-center justify-between w-full text-sm font-bold text-navy-900 group-hover:text-warm-500 pt-4 border-t border-slate-200 transition-colors">
+                            <span>Request This Service</span>
+                            <i class="fa-solid fa-arrow-right transform group-hover:translate-x-1 transition-transform"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Service 3: Heating & Furnace Repair (Updated with user-provided image) -->
+                <div class="bg-slate-50 rounded-3xl overflow-hidden border border-slate-200 hover:border-warm-500/50 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="h-48 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=800&q=80" alt="Heating & Furnace Repair" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/800x600/0B192C/FFF?text=Furnace+Repair';">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                            <span class="absolute bottom-3 left-4 text-white text-xs font-bold bg-warm-500/90 px-3 py-1 rounded-full"><i class="fa-solid fa-fire mr-1"></i> Heating</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-navy-900 mb-3">Heating & Furnace Repair</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                                Help diagnosing heating issues and getting your heating system working properly when winter cold arrives.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="px-6 pb-6">
+                        <button onclick="openServiceRequest('Heating & Furnace Repair')" class="inline-flex items-center justify-between w-full text-sm font-bold text-navy-900 group-hover:text-warm-500 pt-4 border-t border-slate-200 transition-colors">
+                            <span>Request This Service</span>
+                            <i class="fa-solid fa-arrow-right transform group-hover:translate-x-1 transition-transform"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Service 5: Preventive HVAC Maintenance -->
+                <div class="bg-slate-50 rounded-3xl overflow-hidden border border-slate-200 hover:border-cool-500/50 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="h-48 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1581094288338-2314dddb7ece?auto=format&fit=crop&w=800&q=80" alt="Preventive HVAC Maintenance" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                            <span class="absolute bottom-3 left-4 text-white text-xs font-bold bg-cool-600/90 px-3 py-1 rounded-full"><i class="fa-solid fa-clipboard-check mr-1"></i> Maintenance</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-navy-900 mb-3">Preventive HVAC Maintenance</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                                Routine inspections and tune-ups to help maintain system performance and identify potential issues early.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="px-6 pb-6">
+                        <button onclick="openServiceRequest('Preventive HVAC Maintenance')" class="inline-flex items-center justify-between w-full text-sm font-bold text-navy-900 group-hover:text-cool-600 pt-4 border-t border-slate-200 transition-colors">
+                            <span>Request This Service</span>
+                            <i class="fa-solid fa-arrow-right transform group-hover:translate-x-1 transition-transform"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Service 6: Residential & Commercial HVAC -->
+                <div class="bg-slate-50 rounded-3xl overflow-hidden border border-slate-200 hover:border-cool-500/50 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="h-48 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80" alt="Residential & Commercial HVAC" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                            <span class="absolute bottom-3 left-4 text-white text-xs font-bold bg-navy-800/90 px-3 py-1 rounded-full"><i class="fa-solid fa-building-shield mr-1"></i> Commercial</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-navy-900 mb-3">Residential & Commercial HVAC</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                                Comprehensive heating and cooling solutions tailored for homes, offices, and other suitable properties.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="px-6 pb-6">
+                        <button onclick="openServiceRequest('Residential & Commercial HVAC')" class="inline-flex items-center justify-between w-full text-sm font-bold text-navy-900 group-hover:text-cool-600 pt-4 border-t border-slate-200 transition-colors">
+                            <span>Request This Service</span>
+                            <i class="fa-solid fa-arrow-right transform group-hover:translate-x-1 transition-transform"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section id="why-us" class="py-20 lg:py-28 bg-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <!-- Left Content -->
+                <div class="lg:col-span-6 space-y-6">
+                    <div class="inline-flex items-center space-x-2 bg-cool-500/10 text-cool-600 px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">
+                        <i class="fa-solid fa-star"></i>
+                        <span>The AAD Difference</span>
+                    </div>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-navy-900 tracking-tight leading-tight">
+                        Why Homeowners Choose AAD
+                    </h2>
+                    <p class="text-slate-600 text-base leading-relaxed">
+                        We pride ourselves on honesty, transparent pricing, and dependable heating and cooling services that keep your indoor climate comfortable all year round.
+                    </p>
+
+                    <!-- 4 Reasons Grid -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-4">
+                        <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
+                            <div class="w-10 h-10 rounded-xl bg-cool-50 text-cool-600 flex items-center justify-center text-lg font-bold mb-4">
+                                <i class="fa-solid fa-handshake"></i>
+                            </div>
+                            <h3 class="font-bold text-navy-900 text-base mb-2">Dependable Service</h3>
+                            <p class="text-slate-600 text-xs leading-relaxed">A customer-focused approach to addressing your heating and cooling needs.</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
+                            <div class="w-10 h-10 rounded-xl bg-cool-50 text-cool-600 flex items-center justify-center text-lg font-bold mb-4">
+                                <i class="fa-solid fa-house-laptop"></i>
+                            </div>
+                            <h3 class="font-bold text-navy-900 text-base mb-2">Tailored Solutions</h3>
+                            <p class="text-slate-600 text-xs leading-relaxed">Recommendations based on your system, space, comfort requirements, and budget.</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
+                            <div class="w-10 h-10 rounded-xl bg-cool-50 text-cool-600 flex items-center justify-center text-lg font-bold mb-4">
+                                <i class="fa-solid fa-toolbox"></i>
+                            </div>
+                            <h3 class="font-bold text-navy-900 text-base mb-2">Professional Workmanship</h3>
+                            <p class="text-slate-600 text-xs leading-relaxed">Attention to detail throughout the entire service and repair process.</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
+                            <div class="w-10 h-10 rounded-xl bg-cool-50 text-cool-600 flex items-center justify-center text-lg font-bold mb-4">
+                                <i class="fa-solid fa-comments"></i>
+                            </div>
+                            <h3 class="font-bold text-navy-900 text-base mb-2">Clear Communication</h3>
+                            <p class="text-slate-600 text-xs leading-relaxed">Straightforward explanations of the problem, available options, and next steps.</p>
+                        </div>
+                    </div>
+
+                    <div class="pt-4">
+                        <button onclick="openBookingModal()" class="bg-warm-500 hover:bg-warm-600 text-white font-bold px-8 py-3.5 rounded-xl shadow-lg transition-all text-sm">
+                            Let's Discuss Your HVAC Needs
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Right Image -->
+                <div class="lg:col-span-6">
+                    <div class="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
+                        <img src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=1000&q=80" alt="Professional technician inspecting residential heating system" class="w-full h-auto object-cover">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Quote & Maintenance Estimator -->
+    <section class="py-16 bg-navy-900 text-white relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="max-w-3xl mx-auto text-center space-y-4 mb-10">
+                <span class="text-cool-400 text-xs font-bold uppercase tracking-widest bg-white/10 px-3 py-1 rounded-full">Interactive Tool</span>
+                <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight">Estimate Your Service Plan</h2>
+                <p class="text-slate-300 text-sm">Select your property details to get an instant tailored recommendation and book with confidence.</p>
+            </div>
+            
+            <div class="bg-white/10 backdrop-blur-md p-6 sm:p-8 rounded-3xl border border-white/20 max-w-2xl mx-auto">
+                <div class="space-y-6">
+                    <div>
+                        <label class="block text-sm font-semibold text-slate-200 mb-2">1. Select Property Type:</label>
+                        <div class="grid grid-cols-2 gap-4">
+                            <button type="button" onclick="selectProperty('residential', this)" id="btn-res" class="prop-btn py-3 px-4 rounded-xl font-bold text-sm bg-cool-500 text-white border border-cool-400 transition-all">Residential Home</button>
+                            <button type="button" onclick="selectProperty('commercial', this)" id="btn-com" class="prop-btn py-3 px-4 rounded-xl font-bold text-sm bg-white/10 text-slate-300 border border-white/20 transition-all">Commercial Property</button>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold text-slate-200 mb-2">2. Select Primary Need:</label>
+                        <select id="estService" class="w-full bg-slate-800 border border-white/20 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-cool-400">
+                            <option value="Repair">Emergency / Standard Repair</option>
+                            <option value="Installation">New System Installation</option>
+                            <option value="Maintenance">Routine Preventive Tune-Up</option>
+                        </select>
+                    </div>
+                    <div class="bg-white/5 p-4 rounded-xl border border-white/10 flex items-center justify-between">
+                        <div>
+                            <span class="text-xs text-slate-400 block">Recommended Action</span>
+                            <span id="estRecommendation" class="font-bold text-cool-400 text-sm">Professional diagnostic & repair consultation</span>
+                        </div>
+                        <button onclick="applyEstimateToModal()" class="bg-warm-500 hover:bg-warm-600 text-white font-bold px-5 py-2.5 rounded-xl text-xs shadow-md transition-all">
+                            Book This
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Process Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <div class="inline-flex items-center space-x-2 bg-cool-500/10 text-cool-600 px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">
+                    <i class="fa-solid fa-list-ol"></i>
+                    <span>Simple 3-Step Process</span>
+                </div>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-navy-900 tracking-tight">
+                    How We Get Your Comfort Back on Track
+                </h2>
+                <p class="text-slate-600 text-base">Getting professional HVAC service is fast and straightforward.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
+                <!-- Step 1 -->
+                <div class="bg-slate-50 p-8 rounded-3xl border border-slate-200 relative">
+                    <div class="w-12 h-12 rounded-2xl bg-navy-900 text-white font-extrabold text-lg flex items-center justify-center mb-6 shadow-md">
+                        01
+                    </div>
+                    <h3 class="text-xl font-bold text-navy-900 mb-3">Tell Us What You Need</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Contact AAD and explain your heating or cooling issue or project requirements.
+                    </p>
+                </div>
+                <!-- Step 2 -->
+                <div class="bg-slate-50 p-8 rounded-3xl border border-slate-200 relative">
+                    <div class="w-12 h-12 rounded-2xl bg-cool-600 text-white font-extrabold text-lg flex items-center justify-center mb-6 shadow-md">
+                        02
+                    </div>
+                    <h3 class="text-xl font-bold text-navy-900 mb-3">Discuss Your Options</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Get clear information and professional recommendations about the appropriate service for your property.
+                    </p>
+                </div>
+                <!-- Step 3 -->
+                <div class="bg-slate-50 p-8 rounded-3xl border border-slate-200 relative">
+                    <div class="w-12 h-12 rounded-2xl bg-warm-500 text-white font-extrabold text-lg flex items-center justify-center mb-6 shadow-md">
+                        03
+                    </div>
+                    <h3 class="text-xl font-bold text-navy-900 mb-3">Schedule Your Service</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Arrange the next steps directly with our courteous team and enjoy dependable comfort.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Customer Testimonials & Reviews -->
+    <section id="reviews" class="py-20 lg:py-28 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <div class="inline-flex items-center space-x-2 bg-cool-500/10 text-cool-600 px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">
+                    <i class="fa-solid fa-quote-left"></i>
+                    <span>Customer Feedback</span>
+                </div>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-navy-900 tracking-tight">
+                    Trusted for Comfort. Remembered for Service.
+                </h2>
+                <p class="text-slate-600 text-base">See what our valued clients have to say about working with AAD Heating & Air Conditioning.</p>
+            </div>
+
+            <!-- Testimonials Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Review 1 -->
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-200 flex flex-col justify-between relative">
+                    <div class="absolute top-6 right-8 text-cool-500/20 text-4xl">
+                        <i class="fa-solid fa-quote-right"></i>
+                    </div>
+                    <div class="space-y-4 mb-6">
+                        <div class="flex text-amber-400 text-sm space-x-1">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-slate-600 text-sm leading-relaxed italic">
+                            “AAD Heating & Air Conditioning diagnosed our AC issue quickly and had it cooling again in no time. Highly professional, transparent, and courteous technicians!”
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-slate-100 flex items-center space-x-3">
+                        <div class="w-10 h-10 rounded-full bg-navy-900 text-white font-bold flex items-center justify-center text-sm">
+                            JD
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-navy-900 text-sm">Jonathan D.</h4>
+                            <span class="text-xs text-slate-500">Residential Homeowner</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-200 flex flex-col justify-between relative">
+                    <div class="absolute top-6 right-8 text-cool-500/20 text-4xl">
+                        <i class="fa-solid fa-quote-right"></i>
+                    </div>
+                    <div class="space-y-4 mb-6">
+                        <div class="flex text-amber-400 text-sm space-x-1">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-slate-600 text-sm leading-relaxed italic">
+                            “We had a new furnace installed by AAD. The team explained all our options clearly and completed the installation neatly and efficiently. Outstanding service!”
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-slate-100 flex items-center space-x-3">
+                        <div class="w-10 h-10 rounded-full bg-cool-600 text-white font-bold flex items-center justify-center text-sm">
+                            SM
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-navy-900 text-sm">Sarah M.</h4>
+                            <span class="text-xs text-slate-500">Local Property Owner</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-200 flex flex-col justify-between relative">
+                    <div class="absolute top-6 right-8 text-cool-500/20 text-4xl">
+                        <i class="fa-solid fa-quote-right"></i>
+                    </div>
+                    <div class="space-y-4 mb-6">
+                        <div class="flex text-amber-400 text-sm space-x-1">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-slate-600 text-sm leading-relaxed italic">
+                            “Reliable maintenance service every year. They check every component and give honest recommendations without any high-pressure sales talk. Very trustworthy.”
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-slate-100 flex items-center space-x-3">
+                        <div class="w-10 h-10 rounded-full bg-warm-500 text-white font-bold flex items-center justify-center text-sm">
+                            RW
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-navy-900 text-sm">Robert W.</h4>
+                            <span class="text-xs text-slate-500">Commercial Client</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured CTA Banner -->
+    <section class="py-20 cta-pattern text-white relative overflow-hidden">
+        <div class="absolute inset-0 bg-navy-900/60"></div>
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight">
+                Is Your Heating or Cooling System Ready?
+            </h2>
+            <p class="text-slate-200 text-base sm:text-lg max-w-2xl mx-auto">
+                Whether you need a repair, routine maintenance, or a new HVAC system, take the next step toward a more comfortable space.
+            </p>
+            <div class="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4 pt-4">
+                <button onclick="openBookingModal()" class="w-full sm:w-auto bg-warm-500 hover:bg-warm-600 text-white font-bold px-8 py-4 rounded-xl shadow-xl transition-all text-base">
+                    Request Service
+                </button>
+                <a href="tel:5551234567" class="w-full sm:w-auto bg-white/10 hover:bg-white/20 border border-white/20 text-white font-bold px-8 py-4 rounded-xl backdrop-blur-sm transition-all text-base flex items-center justify-center space-x-3">
+                    <i class="fa-solid fa-phone text-warm-500"></i>
+                    <span>Call AAD Today</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Frequently Asked Questions -->
+    <section class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 space-y-4">
+                <div class="inline-flex items-center space-x-2 bg-cool-500/10 text-cool-600 px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">
+                    <i class="fa-solid fa-circle-question"></i>
+                    <span>FAQ</span>
+                </div>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-navy-900 tracking-tight">
+                    Frequently Asked Questions
+                </h2>
+                <p class="text-slate-600 text-base">Clear answers to common questions about our HVAC services.</p>
+            </div>
+
+            <!-- Accordion List -->
+            <div class="space-y-4">
+                <!-- FAQ 1 -->
+                <div class="border border-slate-200 rounded-2xl overflow-hidden">
+                    <button onclick="toggleFaq(this)" class="w-full flex items-center justify-between p-6 text-left font-bold text-navy-900 hover:bg-slate-50 transition-colors">
+                        <span class="text-base">What HVAC services do you provide?</span>
+                        <i class="fa-solid fa-chevron-down text-slate-400 transition-transform"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-6 text-slate-600 text-sm leading-relaxed border-t border-slate-100 pt-4">
+                        We provide comprehensive heating and cooling services including AC repair and installation, heating and furnace repair, heating system installation, preventive maintenance, and residential & commercial HVAC solutions.
+                    </div>
+                </div>
+
+                <!-- FAQ 2 -->
+                <div class="border border-slate-200 rounded-2xl overflow-hidden">
+                    <button onclick="toggleFaq(this)" class="w-full flex items-center justify-between p-6 text-left font-bold text-navy-900 hover:bg-slate-50 transition-colors">
+                        <span class="text-base">When should I schedule HVAC maintenance?</span>
+                        <i class="fa-solid fa-chevron-down text-slate-400 transition-transform"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-6 text-slate-600 text-sm leading-relaxed border-t border-slate-100 pt-4">
+                        It is recommended to schedule HVAC tune-ups twice a year—once in the spring before heavy cooling season, and once in the fall before winter heating season begins.
+                    </div>
+                </div>
+
+                <!-- FAQ 3 -->
+                <div class="border border-slate-200 rounded-2xl overflow-hidden">
+                    <button onclick="toggleFaq(this)" class="w-full flex items-center justify-between p-6 text-left font-bold text-navy-900 hover:bg-slate-50 transition-colors">
+                        <span class="text-base">Should I repair or replace my heating or cooling system?</span>
+                        <i class="fa-solid fa-chevron-down text-slate-400 transition-transform"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-6 text-slate-600 text-sm leading-relaxed border-t border-slate-100 pt-4">
+                        As a general guideline, if your system is over 10-15 years old, requires frequent costly repairs, or has declining efficiency, replacement is often more cost-effective. Our technicians can inspect your unit and give you an honest recommendation.
+                    </div>
+                </div>
+
+                <!-- FAQ 4 -->
+                <div class="border border-slate-200 rounded-2xl overflow-hidden">
+                    <button onclick="toggleFaq(this)" class="w-full flex items-center justify-between p-6 text-left font-bold text-navy-900 hover:bg-slate-50 transition-colors">
+                        <span class="text-base">What information should I provide when requesting service?</span>
+                        <i class="fa-solid fa-chevron-down text-slate-400 transition-transform"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-6 text-slate-600 text-sm leading-relaxed border-t border-slate-100 pt-4">
+                        Please provide your contact details, property type (residential or commercial), the specific service needed (e.g., AC repair or maintenance), and a brief description of any issues you are experiencing.
+                    </div>
+                </div>
+
+                <!-- FAQ 5 -->
+                <div class="border border-slate-200 rounded-2xl overflow-hidden">
+                    <button onclick="toggleFaq(this)" class="w-full flex items-center justify-between p-6 text-left font-bold text-navy-900 hover:bg-slate-50 transition-colors">
+                        <span class="text-base">How can I contact AAD Heating & Air Conditioning?</span>
+                        <i class="fa-solid fa-chevron-down text-slate-400 transition-transform"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-6 text-slate-600 text-sm leading-relaxed border-t border-slate-100 pt-4">
+                        You can reach us by calling (555) 123-4567, emailing info@aadheatingairconditioning.xyz, or submitting a service request form directly on our website.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Request Service Section -->
+    <section id="contact" class="py-20 lg:py-28 bg-slate-50 border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                <!-- Left Column: Contact Info -->
+                <div class="lg:col-span-5 space-y-6">
+                    <div class="inline-flex items-center space-x-2 bg-cool-500/10 text-cool-600 px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">
+                        <i class="fa-solid fa-envelope"></i>
+                        <span>Get In Touch</span>
+                    </div>
+                    <h2 class="text-3xl font-extrabold text-navy-900 tracking-tight leading-tight">
+                        Let's Get Your Comfort Back on Track
+                    </h2>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Have a question about your HVAC system or need help choosing a service? Reach out to AAD Heating & Air Conditioning to discuss your needs.
+                    </p>
+
+                    <div class="space-y-4 pt-2">
+                        <a href="tel:5551234567" class="flex items-center space-x-4 p-4 rounded-2xl bg-white border border-slate-200 hover:border-cool-500 transition-all group">
+                            <div class="w-12 h-12 rounded-xl bg-warm-50 text-warm-500 flex items-center justify-center text-xl group-hover:bg-warm-500 group-hover:text-white transition-colors">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs text-slate-500 block">Call Us Directly</span>
+                                <span class="text-navy-900 font-bold text-base">(555) 123-4567</span>
+                            </div>
+                        </a>
+
+                        <div class="flex items-center space-x-4 p-4 rounded-2xl bg-white border border-slate-200">
+                            <div class="w-12 h-12 rounded-xl bg-cool-50 text-cool-600 flex items-center justify-center text-xl">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs text-slate-500 block">Email Address</span>
+                                <span class="text-navy-900 font-bold text-sm">info@aadheatingairconditioning.xyz</span>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center space-x-4 p-4 rounded-2xl bg-white border border-slate-200">
+                            <div class="w-12 h-12 rounded-xl bg-cool-50 text-cool-600 flex items-center justify-center text-xl">
+                                <i class="fa-solid fa-clock"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs text-slate-500 block">Operating Hours</span>
+                                <span class="text-navy-900 font-bold text-sm">Mon - Fri: 8:00 AM - 6:00 PM</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Service Request Form -->
+                <div class="lg:col-span-7">
+                    <div class="bg-white p-8 sm:p-10 rounded-3xl shadow-xl border border-slate-200">
+                        <h3 class="text-2xl font-bold text-navy-900 mb-2">Request Service</h3>
+                        <p class="text-slate-600 text-sm mb-6">Fill out the form below and our team will get back to you promptly.</p>
+                        
+                        <form id="serviceRequestForm" onsubmit="handleFormSubmit(event)" class="space-y-4">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-semibold uppercase tracking-wider text-slate-700 mb-1">Full Name *</label>
+                                    <input type="text" id="formName" required class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-900 focus:outline-none focus:border-cool-500 text-sm" placeholder="John Doe">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold uppercase tracking-wider text-slate-700 mb-1">Phone Number *</label>
+                                    <input type="tel" id="formPhone" required class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-900 focus:outline-none focus:border-cool-500 text-sm" placeholder="(555) 000-0000">
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-semibold uppercase tracking-wider text-slate-700 mb-1">Email Address *</label>
+                                    <input type="email" id="formEmail" required class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-900 focus:outline-none focus:border-cool-500 text-sm" placeholder="john@example.com">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold uppercase tracking-wider text-slate-700 mb-1">Property Type</label>
+                                    <select id="formPropertyType" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-900 focus:outline-none focus:border-cool-500 text-sm">
+                                        <option value="Residential">Residential</option>
+                                        <option value="Commercial">Commercial</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-semibold uppercase tracking-wider text-slate-700 mb-1">Service Needed</label>
+                                    <select id="formService" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-900 focus:outline-none focus:border-cool-500 text-sm">
+                                        <option value="Air Conditioning Repair">Air Conditioning Repair</option>
+                                        <option value="Air Conditioning Installation">Air Conditioning Installation</option>
+                                        <option value="Heating & Furnace Repair">Heating & Furnace Repair</option>
+                                        <option value="Heating System Installation">Heating System Installation</option>
+                                        <option value="Preventive HVAC Maintenance">Preventive HVAC Maintenance</option>
+                                        <option value="Residential & Commercial HVAC">Residential & Commercial HVAC</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold uppercase tracking-wider text-slate-700 mb-1">Preferred Contact Method</label>
+                                    <select id="formContactMethod" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-900 focus:outline-none focus:border-cool-500 text-sm">
+                                        <option value="Phone Call">Phone Call</option>
+                                        <option value="Email">Email</option>
+                                        <option value="Text Message">Text Message</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-semibold uppercase tracking-wider text-slate-700 mb-1">Brief Description of the Problem</label>
+                                <textarea id="formDescription" rows="3" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-900 focus:outline-none focus:border-cool-500 text-sm" placeholder="Please describe your heating or cooling system issue..."></textarea>
+                            </div>
+
+                            <button type="submit" class="w-full bg-warm-500 hover:bg-warm-600 text-white font-bold py-4 rounded-xl shadow-lg transition-all text-base">
+                                Submit Request
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Professional Footer -->
+    <footer class="bg-navy-900 text-white pt-16 pb-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-white/10">
+                <!-- Brand Column -->
+                <div class="lg:col-span-2 space-y-4">
+                    <div class="flex items-center space-x-3">
+                        <img src="https://images.unsplash.com/photo-1541888946425-d0fbb18f86f6?auto=format&fit=crop&w=150&q=80" alt="AAD Logo" class="w-10 h-10 rounded-xl object-cover shadow-md" onerror="this.src='https://placehold.co/100x100/0B192C/FFF?text=AAD';">
+                        <div>
+                            <span class="text-xl font-800 tracking-tight text-white block leading-tight">AAD</span>
+                            <span class="text-xs font-semibold tracking-wider text-cool-400 uppercase">Heating & Air Conditioning &bull; Est. 1998</span>
+                        </div>
+                    </div>
+                    <p class="text-slate-400 text-sm leading-relaxed max-w-sm">
+                        Professional heating and cooling solutions for residential and commercial properties. Reliable service and comfort you can count on.
+                    </p>
+                    <div class="pt-2 flex items-center space-x-3">
+                        <a href="tel:5551234567" class="w-10 h-10 rounded-xl bg-white/10 hover:bg-cool-500 flex items-center justify-center text-white transition-colors">
+                            <i class="fa-solid fa-phone"></i>
+                        </a>
+                        <a href="mailto:info@aadheatingairconditioning.xyz" class="w-10 h-10 rounded-xl bg-white/10 hover:bg-cool-500 flex items-center justify-center text-white transition-colors">
+                            <i class="fa-solid fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="space-y-4">
+                    <h4 class="text-sm font-bold uppercase tracking-wider text-cool-400">Quick Links</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#home" class="text-slate-300 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="#about" class="text-slate-300 hover:text-white transition-colors">About</a></li>
+                        <li><a href="#services" class="text-slate-300 hover:text-white transition-colors">Services</a></li>
+                        <li><a href="#why-us" class="text-slate-300 hover:text-white transition-colors">Why Choose Us</a></li>
+                        <li><a href="#reviews" class="text-slate-300 hover:text-white transition-colors">Reviews</a></li>
+                        <li><a href="#contact" class="text-slate-300 hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div class="space-y-4">
+                    <h4 class="text-sm font-bold uppercase tracking-wider text-cool-400">Services</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#services" class="text-slate-300 hover:text-white transition-colors">AC Repair</a></li>
+                        <li><a href="#services" class="text-slate-300 hover:text-white transition-colors">AC Installation</a></li>
+                        <li><a href="#services" class="text-slate-300 hover:text-white transition-colors">Heating Repair</a></li>
+                        <li><a href="#services" class="text-slate-300 hover:text-white transition-colors">Heating Installation</a></li>
+                        <li><a href="#services" class="text-slate-300 hover:text-white transition-colors">HVAC Maintenance</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="space-y-4">
+                    <h4 class="text-sm font-bold uppercase tracking-wider text-cool-400">Contact</h4>
+                    <ul class="space-y-2 text-sm text-slate-300">
+                        <li><i class="fa-solid fa-phone text-warm-500 mr-2"></i> (555) 123-4567</li>
+                        <li><i class="fa-solid fa-envelope text-cool-400 mr-2"></i> info@aadheatingairconditioning.xyz</li>
+                        <li><i class="fa-solid fa-clock text-slate-400 mr-2"></i> Mon-Fri: 8AM - 6PM</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 space-y-4 sm:space-y-0">
+                <p>&copy; <span id="currentYear"></span> AAD Heating & Air Conditioning. All rights reserved.</p>
+                <div class="flex space-x-6">
+                    <a href="#home" class="hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="#home" class="hover:text-white transition-colors">Terms of Use</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Booking Modal -->
+    <div id="bookingModal" class="fixed inset-0 z-50 hidden bg-black/60 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-2xl relative transform transition-all">
+            <button onclick="closeBookingModal()" class="absolute top-6 right-6 text-slate-400 hover:text-slate-600 text-xl">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="mb-6">
+                <span class="text-xs font-bold text-cool-600 uppercase tracking-wider bg-cool-50 px-3 py-1 rounded-full">AAD Service Scheduler</span>
+                <h3 class="text-2xl font-extrabold text-navy-900 mt-2">Request an Appointment</h3>
+                <p class="text-slate-600 text-sm">Provide your details and we will coordinate your service promptly.</p>
+            </div>
+
+            <form onsubmit="handleModalSubmit(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-semibold uppercase tracking-wider text-slate-700 mb-1">Full Name *</label>
+                    <input type="text" id="modalName" required class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-900 focus:outline-none focus:border-cool-500 text-sm" placeholder="John Doe">
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-semibold uppercase tracking-wider text-slate-700 mb-1">Phone Number *</label>
+                        <input type="tel" id="modalPhone" required class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-900 focus:outline-none focus:border-cool-500 text-sm" placeholder="(555) 000-0000">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold uppercase tracking-wider text-slate-700 mb-1">Service Needed</label>
+                        <select id="modalService" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-900 focus:outline-none focus:border-cool-500 text-sm">
+                            <option value="Air Conditioning Repair">Air Conditioning Repair</option>
+                            <option value="Air Conditioning Installation">Air Conditioning Installation</option>
+                            <option value="Heating & Furnace Repair">Heating & Furnace Repair</option>
+                            <option value="Heating System Installation">Heating System Installation</option>
+                            <option value="Preventive HVAC Maintenance">Preventive HVAC Maintenance</option>
+                            <option value="Residential & Commercial HVAC">Residential & Commercial HVAC</option>
+                        </select>
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold uppercase tracking-wider text-slate-700 mb-1">Preferred Date & Notes</label>
+                    <textarea id="modalNotes" rows="2" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-900 focus:outline-none focus:border-cool-500 text-sm" placeholder="Preferred date or brief details..."></textarea>
+                </div>
+                <button type="submit" class="w-full bg-warm-500 hover:bg-warm-600 text-white font-bold py-3.5 rounded-xl shadow-lg transition-all text-sm">
+                    Confirm Appointment Request
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Custom Notification Toast -->
+    <div id="toastNotification" class="fixed bottom-6 right-6 z-50 transform translate-y-24 opacity-0 transition-all duration-300 bg-navy-900 text-white px-6 py-4 rounded-2xl shadow-2xl flex items-center space-x-3 border border-white/10">
+        <div class="w-8 h-8 rounded-full bg-cool-500 text-white flex items-center justify-center text-sm font-bold">
+            <i class="fa-solid fa-check"></i>
+        </div>
+        <div>
+            <span class="font-bold text-sm block" id="toastTitle">Success!</span>
+            <span class="text-xs text-slate-300" id="toastMessage">Your request has been received.</span>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        // FAQ Accordion
+        function toggleFaq(button) {
+            const content = button.nextElementSibling;
+            content.classList.toggle('hidden');
+            button.classList.toggle('text-cool-600');
+        }
+
+        // Modal Controls
+        function openBookingModal() {
+            document.getElementById('bookingModal').classList.remove('hidden');
+        }
+        function closeBookingModal() {
+            document.getElementById('bookingModal').classList.add('hidden');
+        }
+
+        function openServiceRequest(serviceName) {
+            document.getElementById('formService').value = serviceName;
+            document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+            showToast('Service Selected', `You selected ${serviceName}. Please complete the form below.`);
+        }
+
+        // Quick Book from Hero
+        function handleQuickBook(event) {
+            event.preventDefault();
+            const name = document.getElementById('quickName').value;
+            const phone = document.getElementById('quickPhone').value;
+            const service = document.getElementById('quickService').value;
+            
+            showToast('Request Received!', `Thank you ${name}. We will call you at ${phone} to confirm your ${service} appointment.`);
+            event.target.reset();
+        }
+
+        // Form Submit
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            const name = document.getElementById('formName').value;
+            const phone = document.getElementById('formPhone').value;
+            const service = document.getElementById('formService').value;
+
+            showToast('Request Submitted Successfully!', `Thank you ${name}! Our team will contact you regarding ${service}.`);
+            event.target.reset();
+        }
+
+        // Modal Submit
+        function handleModalSubmit(event) {
+            event.preventDefault();
+            const name = document.getElementById('modalName').value;
+            const phone = document.getElementById('modalPhone').value;
+            const service = document.getElementById('modalService').value;
+
+            closeBookingModal();
+            showToast('Appointment Requested!', `Thank you ${name}. We've received your request for ${service} and will reach out at ${phone}.`);
+            event.target.reset();
+        }
+
+        // Interactive Estimator
+        let selectedPropType = 'residential';
+        function selectProperty(type, btn) {
+            selectedPropType = type;
+            document.querySelectorAll('.prop-btn').forEach(b => {
+                b.classList.remove('bg-cool-500', 'text-white', 'border-cool-400');
+                b.classList.add('bg-white/10', 'text-slate-300', 'border-white/20');
+            });
+            btn.classList.remove('bg-white/10', 'text-slate-300', 'border-white/20');
+            btn.classList.add('bg-cool-500', 'text-white', 'border-cool-400');
+
+            updateRecommendation();
+        }
+
+        document.getElementById('estService').addEventListener('change', updateRecommendation);
+
+        function updateRecommendation() {
+            const service = document.getElementById('estService').value;
+            const rec = document.getElementById('estRecommendation');
+            if(service === 'Repair') {
+                rec.textContent = `Priority ${selectedPropType} diagnostic & fast repair dispatch`;
+            } else if(service === 'Installation') {
+                rec.textContent = `Custom sizing consultation for ${selectedPropType} high-efficiency unit`;
+            } else {
+                rec.textContent = `Comprehensive ${selectedPropType} preventive maintenance tune-up`;
+            }
+        }
+
+        function applyEstimateToModal() {
+            const service = document.getElementById('estService').value;
+            let fullServiceName = 'Air Conditioning Repair';
+            if(service === 'Installation') fullServiceName = 'Air Conditioning Installation';
+            if(service === 'Maintenance') fullServiceName = 'Preventive HVAC Maintenance';
+
+            document.getElementById('modalService').value = fullServiceName;
+            openBookingModal();
+        }
+
+        // Toast Notification Helper
+        function showToast(title, message) {
+            const toast = document.getElementById('toastNotification');
+            document.getElementById('toastTitle').textContent = title;
+            document.getElementById('toastMessage').textContent = message;
+
+            toast.classList.remove('translate-y-24', 'opacity-0');
+            setTimeout(() => {
+                toast.classList.add('translate-y-24', 'opacity-0');
+            }, 5000);
+        }
+    </script>
+</body>
+</html>
